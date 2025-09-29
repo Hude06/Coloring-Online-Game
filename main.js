@@ -30,7 +30,7 @@ class Mouse {
         canvas.addEventListener("mouseup", () => {
             this.click = false;
         });
-                canvas.addEventListener("touchstart", (e) => {
+        canvas.addEventListener("touchstart", (e) => {
             e.preventDefault(); // Prevent scrolling
             const touch = e.touches[0];
             this.updatePos(touch.clientX, touch.clientY);
@@ -46,6 +46,11 @@ class Mouse {
         canvas.addEventListener("touchend", () => {
             this.click = false;
         });
+    }
+    updatePos(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    this.x = ((clientX - rect.left) / rect.width) * canvas.width;
+    this.y = ((clientY - rect.top) / rect.height) * canvas.height;
     }
 }
 
@@ -96,14 +101,20 @@ async function getSquares() {
 }
 updateSquares()
 async function updateSquares() {
-    let sqr = await getSquares();
-    if (sqr) {
-        squares = sqr
-    }
-    setTimeout(() => {
-        updateSquares();
-    }, 500);
+    try {
+        const sqr = await getSquares();
+        if (sqr) {
+            // Merge new squares without resetting
+            for (let s of sqr) {
+                if (!squares.some(local => local.id === s.id)) {
+                    squares.push(s);
+                }
+            }
+        }
+    } catch (err) { console.error(err); }
+    setTimeout(updateSquares, 500);
 }
+
 
 async function loop() {
     requestAnimationFrame(loop);
