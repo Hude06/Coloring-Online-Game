@@ -55,7 +55,7 @@ function getRandomColor() {
   }
   return color;
 }
-const SERVER_URL = 'http://apps.judemakes.dev/Coloring-Online-Game:3000'; // your Express server
+const SERVER_URL = "https://apps.judemakes.dev/Coloring-Online-Game";
 
 async function sendSquareData(x, y,id,color) {
     try {
