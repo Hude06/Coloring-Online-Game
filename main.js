@@ -105,7 +105,7 @@ async function updateSquares() {
         const sqr = await getSquares();
         squares = sqr;
     } catch (err) { console.error(err); }
-    setTimeout(updateSquares, 100);
+    setTimeout(updateSquares, 200);
 }
 
 
