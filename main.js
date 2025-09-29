@@ -30,6 +30,22 @@ class Mouse {
         canvas.addEventListener("mouseup", () => {
             this.click = false;
         });
+                canvas.addEventListener("touchstart", (e) => {
+            e.preventDefault(); // Prevent scrolling
+            const touch = e.touches[0];
+            this.updatePos(touch.clientX, touch.clientY);
+            this.click = true;
+        }, { passive: false });
+
+        canvas.addEventListener("touchmove", (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            this.updatePos(touch.clientX, touch.clientY);
+        }, { passive: false });
+
+        canvas.addEventListener("touchend", () => {
+            this.click = false;
+        });
     }
 }
 
