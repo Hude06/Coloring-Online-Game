@@ -1,7 +1,7 @@
 {
   "name": "devts",
   "module": "index.ts",
-  "type": "es2022",
+  "type": "module",
   "private": true,
   "devDependencies": {
     "@types/bun": "latest"
