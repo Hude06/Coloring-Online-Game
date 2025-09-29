@@ -1,0 +1,17 @@
+{
+  "name": "devts",
+  "module": "index.ts",
+  "type": "es2022",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "tsx": "^4.20.5"
+  }
+}
