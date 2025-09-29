@@ -103,14 +103,7 @@ updateSquares()
 async function updateSquares() {
     try {
         const sqr = await getSquares();
-        if (sqr) {
-            // Merge new squares without resetting
-            for (let s of sqr) {
-                if (!squares.some(local => local.id === s.id)) {
-                    squares.push(s);
-                }
-            }
-        }
+        squares = sqr;
     } catch (err) { console.error(err); }
     setTimeout(updateSquares, 500);
 }
