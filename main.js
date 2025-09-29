@@ -103,7 +103,7 @@ updateSquares()
 async function updateSquares() {
     try {
         const sqr = await getSquares();
-        squares = sqr;
+        squares.push(...sqr);
     } catch (err) { console.error(err); }
     setTimeout(updateSquares, 200);
 }
