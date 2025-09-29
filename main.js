@@ -102,7 +102,7 @@ async function updateSquares() {
     }
     setTimeout(() => {
         updateSquares();
-    }, 50);
+    }, 500);
 }
 
 async function loop() {
