@@ -130,7 +130,7 @@ async function loop() {
     // Draw all green squares
     for (let sq of squares) {
         ctx.fillStyle = sq.color;
-        ctx.fillRect(sq.x - 5, sq.y - 5, 15, 15);
+        ctx.fillRect(sq.x - 5, sq.y - 5, 40, 40);
     }
 }
 
