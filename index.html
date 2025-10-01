@@ -6,6 +6,9 @@
     <title>RealTimeDrawingBoard</title>
 </head>
 <body>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="size">
+    </div>
     <canvas id = "canvas" width="1920" height="1080"></canvas>
     <script type="module" src="./main.js"></script>
     <style>
@@ -13,8 +16,10 @@
             margin: 0;
             height: 100%;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            
             background: #f0f0f0; /* optional background color */
         }
 
