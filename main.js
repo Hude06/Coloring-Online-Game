@@ -165,7 +165,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Draw all squares (centered)
     for (const sq of squares.values()) {
       ctx.fillStyle = sq.color;
-      ctx.fillRect(sq.x - sq.w / 2, sq.y - sq.h / 2, sq.w, sq.h);
+      ctx.fillRect(sq.x, sq.y, sq.w, sq.h);
     }
   }
 
